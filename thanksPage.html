@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            background-color: #fbe7f9;
+            border: 10px solid rgb(26, 118, 130);
+            border-radius: 20px;
+            margin: 15px;
+        }
+
+        h1 {
+            margin: 100px auto;
+            text-align: center;
+            background-color:  rgb(233, 221, 221);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+
+        .msg {
+            text-align: center;
+            font-size: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #email {
+            color: blue;
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        .otpdiv {
+            margin: 50px auto;
+            padding: 5px;
+            align-items: center;
+            display: block;
+            box-sizing: border-box;
+            margin-left: 450px;
+            margin-right: 450px;
+            background-color:  rgb(233, 221, 221);
+        }
+
+        .otpdiv button {
+            display: block;
+            align-items: center;
+            width: 150px;
+            height: 30px;
+            background-color: rgb(222, 252, 253);
+            margin: 10px auto;
+            border-radius: 7px;
+        }
+        .otpdiv div{
+            display: flex;
+            justify-content: center;
+        }
+
+        .otpdiv div input {
+            width: 100px;
+            height: 30px;
+            margin:20px 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="generateOpt()">
+    <h1>Dear <span id="namein"></span>,<p> Thank You For Enquiry!!</p>
+    </h1>
+
+    <p class="msg">Enter OTP which is sent to <span id="email"></span>
+    </p>
+    <div class="otpdiv" >
+        
+        <div>
+            <input type="text" pattern="\d*" maxlength="5" id="otpin" placeholder="enter otp here" />
+            <p id="otpError"></p>
+        </div>
+        <button onclick="OTPValidation()" id="Otp">Validate OTP</button>
+    </div>
+
+    <script>
+        document.getElementById('namein').innerHTML = localStorage.getItem("nameout");
+        document.getElementById('email').innerHTML = localStorage.getItem("mailout");
+    </script>
+    <script src="js/index.js"></script>
+
+</body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Loan Application</title>
+</head>
+
+<body onload="captchaGenerate()">
+    <h1>Loan Application</h1>
+    <div class="conatainer">
+        <form action="/thanksPage.html" name="Loanform" method="GET">
+
+            <label>Full Name:</label>
+            <input class="txt" id="name" type="text" name="name" onchange="nameValidation()" required>
+            <label class="error" id="nameErr"></label><br><br>
+
+            <label> Email:</label>
+            <input class="txt" id="email" type="text" name="email" onchange="emailValidation()"
+                required>
+            <label class="error" id="emailErr"></label><br><br>
+
+            <label>PAN Number:</label>
+            <input class="txt" id="pancard" type="text" name="pancard" onchange="panValidation()" required>
+            <label class="error" id="panErr"></label>
+            <br><br>
+
+            <label>Loan Amount:</label>
+            <input class="txt" id="amt" type="text" name="amt" onkeyup="convertNumToWords()" onblur="LoanAmtValidation()" required>
+            <span class="amt" id="words"></span>
+            <label class="error" id="amtErr"></label><br><br>
+
+            <input id="mainCaptcha" type="text" name="mainCaptcha" readonly="readonly">
+            <input id="capbtn" type="button" value="" onclick="captchaGenerate()"><br><br>
+            <input id="txtInput" type="text" name="txtInput" placeholder="captcha" onchange="CheckValidCaptch()" required>
+            <label class="error" id="capErr"></label>
+            <label class="succ" id="capSucc"></label>
+            <br><br>
+
+
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+
+</body>
+<script src="./js/index.js">
+
+</script>
+
+</html>
