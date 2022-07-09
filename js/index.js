@@ -150,6 +150,7 @@ function CheckValidCaptch(){
         emailValidation();
         panValidation();
         LoanAmtValidation();
+        document.getElementById('submit').disabled = false;
         
     return true;
     }
@@ -192,20 +193,3 @@ function OTPValidation() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
